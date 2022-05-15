@@ -31,9 +31,12 @@ def draw_plot(points, linear_function, square_function, cubic_function, degree_f
     ax.xaxis.set_ticks_position('bottom')
     ax.yaxis.set_ticks_position('left')
 
-    ax.plot(x, linear_function(x), "r", linewidth=2.0, label="linear")
-    ax.plot(x, square_function(x), "g", linewidth=2.0, label="square")
-    ax.plot(x, cubic_function(x), "b", linewidth=2.0, label="cube")
+    if linear_function is not None:
+        ax.plot(x, linear_function(x), "r", linewidth=2.0, label="linear")
+    if square_function is not None:
+        ax.plot(x, square_function(x), "g", linewidth=2.0, label="square")
+    if cubic_function is not None:
+        ax.plot(x, cubic_function(x), "b", linewidth=2.0, label="cube")
     if degree_function is not None:
         ax.plot(x, degree_function(x), "pink", linewidth=2.0, label="degree")
     x = np.linspace(0.000001, maximum_x + 0.5, 10000)
@@ -41,8 +44,9 @@ def draw_plot(points, linear_function, square_function, cubic_function, degree_f
         ax.plot(x, exponential_function(x), "darkred", linewidth=2.0, label="exp")
     if ln_function is not None:
         ax.plot(x, ln_function(x), "purple", linewidth=2.0, label="ln")
+
     ax.legend()
-    ax.plot(points_x, points_y, linewidth=0, marker="*", markersize=10, markeredgecolor="black", markerfacecolor="green")
+    ax.plot(points_x, points_y, linewidth=0, marker=".", markersize=10, markeredgecolor="black", markerfacecolor="green")
 
     ax.set(xlim=(minimum_x - 0.5, maximum_x + 0.5), xticks=np.arange(minimum_x, maximum_x, 0.5),
            ylim=(minimum_y - 0.5, maximum_y + 0.5), yticks=np.arange(minimum_y, maximum_y, 0.5))
