@@ -191,7 +191,7 @@ def degree_approximation(points):
     except:
         return None, None, None
 
-    result_function = lambda x: np.exp(answer[1]) * (x ** answer[0])
+    result_function = lambda x: np.exp(answer[1]) * (abs(x) ** answer[0])
     presentation_function = f"{round(math.exp(answer[1]), 3)}x^{round(answer[0], 3)}"
 
     errors = [(true_points[i].y - result_function(true_points[i].x)) ** 2 for i in range(n)]

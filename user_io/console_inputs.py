@@ -22,7 +22,7 @@ def get_points():
             print('Неправильный формат ввода!')
 
     points = []
-    print("Введите точки через пробел ")
+    print("Введите точки через пробел: ")
     while len(points) != n:
         try:
             for i in range(n):
