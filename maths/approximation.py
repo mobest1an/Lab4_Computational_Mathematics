@@ -92,7 +92,7 @@ def square_approximation(points):
 
     for i in range(n):
         sx += points[i].x
-        sx2 += points[i].y ** 2
+        sx2 += points[i].x ** 2
         sx3 += points[i].x ** 3
         sx4 += points[i].x ** 4
         sy += points[i].y

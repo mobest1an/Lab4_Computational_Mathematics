@@ -15,26 +15,32 @@ def console_mode():
     if linear_function is not None:
         print(f"Линейной аппроксимацией получена функция: {linear_presentation_function}, sigma = {round(linear_mid_square_error, 3)}")
     else:
+        print("Линейная аппроксимация не найдена!")
         linear_mid_square_error = 999
     if square_function is not None:
         print(f"Квадратичной аппроксимацией получена функция: {square_presentation_function}, sigma = {round(square_mid_square_error, 3)}")
     else:
+        print("Квадратичная аппроксимация не найдена!")
         square_mid_square_error = 999
     if cubic_function is not None:
         print(f"Кубической аппроксимацией получена функция: {cubic_presentation_function}, sigma = {round(cubic_mid_square_error, 3)}")
     else:
+        print("Кубическая аппроксимация не найдена!")
         cubic_mid_square_error = 999
     if degree_function is not None:
         print(f"Степенной аппроксимацией получена функция: {degree_presentation_function}, sigma = {round(degree_mid_square_error, 3)}")
     else:
+        print("Степенная аппроксимация не найдена!")
         degree_mid_square_error = 999
     if exponential_function is not None:
         print(f"Экспоненциальной аппроксимацией получена функция: {exponential_presentation_function}, sigma = {round(exponential_mid_square_error, 3)}")
     else:
+        print("Экспоненциальная аппроксимация не найдена!")
         exponential_mid_square_error = 999
     if ln_function is not None:
         print(f"Логарифмической аппроксимацией получена функция: {ln_presentation_function}, sigma = {round(ln_mid_square_error, 3)}")
     else:
+        print("Логарифмическая аппроксимация не найдена!")
         ln_mid_square_error = 999
 
     r = min(linear_mid_square_error, square_mid_square_error, cubic_mid_square_error, degree_mid_square_error, exponential_mid_square_error, ln_mid_square_error)
